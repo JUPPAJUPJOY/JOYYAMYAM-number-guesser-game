@@ -24,6 +24,20 @@ def get_player_guess():
 
 def check_guess(secret_number, player_guess):
     """
+    เปรียบเทียบตัวเลขที่ผู้เล่นทายกับตัวเลขลับ
+    และส่งผลลัพธ์กลับเป็นข้อความ
+
+    Returns:
+        result (str): "ต่ำไป", "สูงไป", หรือ "ถูกต้อง!"
+        correct (bool): True ถ้าทายถูก, False ถ้ายังไม่ถูก
+    """
+    if player_guess < secret_number:
+        return "ต่ำไป", False
+    elif player_guess > secret_number:
+        return "สูงไป", False
+    else:
+        return "ถูกต้อง!", True
+    """
     Task for Student 2:
     1. Compare the player's guess with the secret number.
     2. If the guess is correct, return the string "correct".
